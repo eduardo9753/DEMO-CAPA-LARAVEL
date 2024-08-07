@@ -13,6 +13,7 @@ Route::post('/instructor/course/store', [CourseController::class , 'store'])->na
 Route::get('/instructor/course/edit/{course}', [CourseController::class, 'edit'])->name('instructor.course.edit');
 Route::put('/instructor/course/update/{course}', [CourseController::class, 'update'])->name('instructor.course.update');
 Route::get('/instructor/asignar/curso/area', [CourseController::class , 'asignar'])->name('instructor.course.asignar');
+Route::post('/instructor/course/active/{course}', [CourseController::class ,'active'])->name('instructor.course.active');
 
 
 Route::get('/instructori/section/index/{course}', [SectionController::class, 'index'])->name('instructor.section.index');

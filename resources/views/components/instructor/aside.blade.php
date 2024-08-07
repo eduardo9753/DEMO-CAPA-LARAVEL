@@ -3,27 +3,24 @@
     <aside class="">
         <ul class="list-group z-index">
             <li class="list-group-item">
-                <a class=""
-                    href="{{ route('instructor.course.edit', ['course' => $course]) }}">Informacion
+                <a class="" href="{{ route('instructor.course.edit', ['course' => $course]) }}">Informacion
                     del curso</a>
             </li>
             <li class="list-group-item">
-                <a class=""
-                    href="{{ route('instructor.section.index', ['course' => $course]) }}">Secciones
+                <a class="" href="{{ route('instructor.section.index', ['course' => $course]) }}">Secciones
                     del curso</a>
             </li>
 
             <li class="list-group-item">
-                <a class=""
-                    href="{{ route('instructor.lesson.index', ['course'=>$course]) }}">Lecciones
+                <a class="" href="{{ route('instructor.lesson.index', ['course' => $course]) }}">Lecciones
                     del curso</a>
             </li>
-    
+
 
             <li class="list-group-item">
                 @switch($course->status)
                     @case('inactivo')
-                        <form action="" method="POST">
+                        <form action="{{ route('instructor.course.active', ['course' => $course]) }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-danger">Publicar</button>
                         </form>

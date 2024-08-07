@@ -72,6 +72,11 @@
     display: block; /* Asegúrate de que el canvas no se estire */
 }
 
+/* Estilos para el CKEditor  PARA PONERLO DEL MISMO COLOR*/
+.ck {
+    background-color: #333 !important; /* Fondo negro */
+    color: #fff !important; /* Texto blanco */
+}
 
 
 

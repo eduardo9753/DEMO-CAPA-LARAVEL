@@ -83,4 +83,19 @@ class CourseController extends Controller
     {
         return view('Instructor.course.asignar');
     }
+
+    //para activar el curso
+    public function active(Course $course)
+    {
+        try {
+            // Encuentra el curso o lanza una excepción si no se encuentra
+            $course->update(['status' => 'activo']);
+
+            // Redirige con un mensaje de éxito
+            return redirect()->back()->with('success', 'El curso ha sido activado.');
+        } catch (\Exception $e) {
+            // Redirige con un mensaje de error en caso de excepción
+            return redirect()->back()->with('error', 'Hubo un problema al activar el curso.');
+        }
+    }
 }

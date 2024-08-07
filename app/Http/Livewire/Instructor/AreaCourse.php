@@ -23,7 +23,7 @@ class AreaCourse extends Component
 
     public function mount()
     {
-        $this->courses = Course::all();
+        $this->courses = Course::where('status','=','activo')->get();
         $this->areas = Area::all();
         $this->reload();
         //dd($this->courses);
